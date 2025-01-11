@@ -1,6 +1,16 @@
-Extension { #name : #SequenceableCollection }
+Extension { #name : 'SequenceableCollection' }
 
-{ #category : #'*Galets-Collections' }
+{ #category : '*Galets-Collections' }
+SequenceableCollection >> doTwoByTwo: aTwoArgsBlockClosure [ 
+	"does not treat the last element if the receiver size is odd"
+
+	| c |
+	c := self size // 2.
+	1 to: c do: [ :i | aTwoArgsBlockClosure value: (self at: (i * 2) - 1) value: (self at: i *2) ].
+	
+]
+
+{ #category : '*Galets-Collections' }
 SequenceableCollection >> ifCutOn: isSplitterBlock doWithCutAndUncuts: aTwoArgBlock [
 	"Applies aTwoArgBlock (with current splitter objects and previous unsplit objects) to the receiver.
 	An optimised version could work with indexes to avoid creating intermediate collections."	
@@ -20,7 +30,7 @@ SequenceableCollection >> ifCutOn: isSplitterBlock doWithCutAndUncuts: aTwoArgBl
 	 
 ]
 
-{ #category : #'*Galets-Collections' }
+{ #category : '*Galets-Collections' }
 SequenceableCollection >> ifCutOn: isSplitterBlock doWithCutAndUncuts: aTwoArgBlock finally: aBlock [
 	"Applies aTwoArgBlock (with current splitter objects and previous unsplit objects) to the receiver. When uncuts are left executes aBlock with them.
 	An optimised version could work with indexes to avoid creating intermediate collections."	
@@ -42,7 +52,7 @@ SequenceableCollection >> ifCutOn: isSplitterBlock doWithCutAndUncuts: aTwoArgBl
 	 
 ]
 
-{ #category : #'*Galets-Collections' }
+{ #category : '*Galets-Collections' }
 SequenceableCollection >> indexesOf: anObject [  
 	"Return all the indexes of the argument in the receiver."
 	"(#(33 4 33 33 5 6 7 ) indexesOf: 33) asArray >>>  #(1 3 4)"

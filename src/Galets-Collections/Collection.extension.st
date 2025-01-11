@@ -1,6 +1,6 @@
-Extension { #name : #Collection }
+Extension { #name : 'Collection' }
 
-{ #category : #'*Galets-Collections' }
+{ #category : '*Galets-Collections' }
 Collection >> collect: aBlock aroundAndBetween: anElement [
 	
 	"(#( 'x y' 'k z' 'a' ) 

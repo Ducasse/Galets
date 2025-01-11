@@ -1,6 +1,6 @@
-Extension { #name : #OrderedCollectionTest }
+Extension { #name : 'OrderedCollectionTest' }
 
-{ #category : #'*Galets-Collections' }
+{ #category : '*Galets-Collections' }
 OrderedCollectionTest >> testIfCutDoWithCutAndUncuts [
 
 	| res |
@@ -14,7 +14,7 @@ OrderedCollectionTest >> testIfCutDoWithCutAndUncuts [
 	self assert: res equals: #(#east 2 2 #north 1 1 1 #east 5) asOrderedCollection
 ]
 
-{ #category : #'*Galets-Collections' }
+{ #category : '*Galets-Collections' }
 OrderedCollectionTest >> testIfCutDoWithCutAndUncutsFirst [
 
 	| res |
@@ -28,7 +28,7 @@ OrderedCollectionTest >> testIfCutDoWithCutAndUncutsFirst [
 	self assert: res equals: #(#east #north 1 1 1 #east 5) asOrderedCollection
 ]
 
-{ #category : #'*Galets-Collections' }
+{ #category : '*Galets-Collections' }
 OrderedCollectionTest >> testIfCutDoWithCutAndUncutsLast [
 
 	| res |
@@ -42,7 +42,7 @@ OrderedCollectionTest >> testIfCutDoWithCutAndUncutsLast [
 	self assert: res equals: #(#east #north 1 1 1 #east 5 666) asOrderedCollection
 ]
 
-{ #category : #'*Galets-Collections' }
+{ #category : '*Galets-Collections' }
 OrderedCollectionTest >> testIfCutDoWithCutAndUncutsNoCut [
 
 	| res |
